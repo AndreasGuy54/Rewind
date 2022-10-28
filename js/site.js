@@ -27,20 +27,3 @@ const displayString = (reversed) => {
     document.querySelector("#message").innerHTML = `Your string when reserved is: ${reversed}`;
     document.querySelector("#alert").classList.remove("invisible");
 }
-
-// Display the numbers and make even numbers bold
-// const displayNumbers = (nums) => {
-//     let templateRows = '';
-
-//     nums.forEach(num => {
-//         let className = '';
-
-//         if (num % 2 === 0) {
-//             className = 'even';
-//         } 
-        
-//         templateRows += `<tr><td class="${className}">${num}</td></tr>`;
-//     });
-
-//     document.querySelector('#results').innerHTML = templateRows;
-// }
