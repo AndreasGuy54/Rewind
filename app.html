@@ -68,13 +68,13 @@
                         <h5 class="logoFont">Enter A String To Reverse</h5>
                         <form class="row">
                             <div class="col mt-1">
-                                <input id="userString" type="text" class="form-control" placeholder="Text goes here" 
+                                <input id="userInput" type="text" class="form-control" placeholder="Text goes here" 
                                     aria-label="Enter A String">
                             </div>
                             <div class="col-12 mt-4 d-flex justify-content-lg-end justify-content-md-start">
-                                <button id="btnSubmit" type="button" onclick="getValues()" class="btn btn-outline-success btn-lg">Reverse Me</button>
+                                <button id="btnSubmit" type="button" onclick="getValue()" class="btn btn-outline-success btn-lg">Reverse Me</button>
                             </div>
-                            <div id="alert" role="alert" class="alert alert-success mt-5 invisibl fade show">
+                            <div id="alert" role="alert" class="alert alert-success mt-5 invisible fade show">
                                 <h4 class="alert-heading">Well Done!</h4>
                                 <hr>
                                 <p id="message">
@@ -116,7 +116,7 @@
     </script>
     <script src="js/site.js"></script>
     <script>
-        // document.querySelector('#btnSubmit').addEventListener('click', getValues);
+        // document.querySelector('#btnSubmit').addEventListener('click', getValue);
     </script>
 </body>
 

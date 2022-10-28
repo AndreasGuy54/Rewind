@@ -59,54 +59,49 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // get the values from the inputs on the app page
-                            const getValues = () => {
-                                let firstNum = parseInt(document.querySelector('#startValue').value)
-                                let lastNum = parseInt(document.querySelector('#endValue').value)
+                            // Get the string from the input on the app page (controller function)
+                            const getValue = () => {
 
-                                let numbers = generateNumbers(firstNum, lastNum);
+                                document.querySelector("#alert").classList.add("invisible");
 
-                                displayNumbers(numbers);
+                                let userInput = document.querySelector("#userInput").value;
+                                let reversedInput = reverseString(userInput);
+
+                                displayString(reversedInput);
                             }
-                            // generate numbers from the start value to the end value
-                            const generateNumbers = (startVal, endVal) => {
-                                let nums = [];
 
-                                for (let i = startVal; i <= endVal; i++) {
-                                    nums.push(i);
+                            // Reverse the string (logic function)
+                            const reverseString = (input) => {
+                                let revString = [];
+                                // let revString = "";
+
+                                for (let i = (input.length - 1); i >= 0; i--) {
+                                    revString.push(input[i]);
+                                    //revString += userString[i];
                                 }
-                                return nums;
+
+                                return revString.join("");
                             }
 
-                            // Display the numbers and make even numbers bold
-                            const displayNumbers = (nums) => {
-                                let templateRows = '';
-
-                                nums.forEach(num => {
-                                    let className = '';
-
-                                    if (num % 2 === 0) {
-                                        className = 'even';
-                                    } 
-                                    
-                                    templateRows += `&lt;tr>&lt;td class="${className}" >${number}&lt;/td>&lt;/tr>
-                                });
-
-                                document.querySelector('#results').innerHTML = templateRows;
+                            // Display the reversed string to the user (view function)
+                            const displayString = (reversed) => {
+                                document.querySelector("#message").innerHTML = `Your string when reserved is: ${reversed}`;
+                                document.querySelector("#alert").classList.remove("invisible");
                             }
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4 py-1">
                     <p>The Code is structured in three major functions.</p>
-                    <h5>getValues()</h5>
-                    <p>A function that takes in the two input values as numbers; calls the generateNumbers function with the two numbers as arguments
-                        and displays a list of generated integers starting from the first number to the second number with the displayNumbers function.</p>
-                    <h5>generateNumbers()</h5>
-                    <p>generates an array of integers between two numbers using the first parameter as a starting value and the second as the end value.</p>
-                    <h5>displayNumbers()</h5>
-                    <p>A function that takes in the array of generated intergers and displays each number as table data in a table row.
-                        Even numbers within the collection are given a className with styles that make them appear as bold.</p>
+                    <h5>getValue()</h5>
+                    <p>A function that takes in the text input from the user; calls the calls the rereverseString function the input as its argument
+                        and displays a message with the reversed string in a bootstrap alert with the displayString function.</p>
+                    <h5>reverseString()</h5>
+                    <p>takes input string as an argument and loops backwards through the string an pushes the indexes into a new reversed string array.
+                        We turn the array into a string without the delimiters using the join() function.</p>
+                    <h5>displayString()</h5>
+                    <p>A function that takes in the reversed string displays a bootstrap alert by removing the invisible class on the alert div.
+                        The message is displayed in the alert paragraph.</p>
                 </div>
             </div>
         </div>
