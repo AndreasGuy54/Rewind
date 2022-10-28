@@ -1,4 +1,19 @@
-// get the values from the inputs on the app page
+// Get the string from the input on the app page (controller function)
+const getValue = () => {
+
+}
+
+// Reverse the string (logic function)
+const reverseString = () => {
+
+}
+
+// Display the reversed string to the user (view function)
+const displayString = () => {
+
+}
+
+
 const getValues = () => {
     let firstNum = parseInt(document.querySelector('#startValue').value)
     let lastNum = parseInt(document.querySelector('#endValue').value)
